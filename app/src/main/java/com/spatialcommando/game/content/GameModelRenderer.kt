@@ -295,5 +295,6 @@ class GameModelRenderer(
         val it=bulletModels.iterator()
         while(it.hasNext()){val entry=it.next();if(entry.key !in live){val (e,friendly)=entry.value;setVisible(e,false);(if(friendly)friendlyPool else hostilePool).addLast(e);it.remove()}}
     }
+    fun actorPlaybackState(enemyId: Int? = null): ActorPlaybackState? = (if(enemyId==null) heroAnimation else enemyAnimations[enemyId])?.playbackState()
     override fun close(){if(closed)return;closed=true;heroAnimation?.close();enemyAnimations.values.forEach{it.close()};root.destroy();bulletModels.clear();friendlyPool.clear();hostilePool.clear();visualEntities.clear();visibility.clear()}
 }

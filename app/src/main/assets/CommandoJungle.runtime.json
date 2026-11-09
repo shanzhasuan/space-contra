@@ -1,7 +1,7 @@
 {
   "bundle": "CommandoJungle.bundle",
   "sourcePath": "Sources/Scenes/JungleFront.usda",
-  "runtimeSceneKey": "Scenes/JungleFront",
+  "runtimeSceneKey": "JungleFront",
   "scopePath": "Root",
   "rootCount": 10,
   "rootNames": [

@@ -13,7 +13,7 @@ PICO Spatial 原生立体横版闯关游戏，支持左右手柄。包含十个�
 | 右摇杆下推 | 趴下，松开站起 |
 | 指针点击菜单 | 新游戏、继续、重试、下一关 |
 
-使用 Kotlin、Spatial SDK BOM 6.2.8、原生 SpatialUI 和已预打包的 Editor Bundle。模型和全景为本项目素材，音效为原创合成；未使用原作 APK、ROM 或解包素材。游戏参考经典横版射击规则。
+使用 Kotlin、Spatial SDK BOM 6.1.9、原生 SpatialUI 和已预打包的 Editor Bundle。模型和全景为本项目素材，音效为原创合成；未使用原作 APK、ROM 或解包素材。游戏参考经典横版射击规则。
 
 构建需要 JDK 21、Android SDK 35 和项目 Gradle Wrapper：
 

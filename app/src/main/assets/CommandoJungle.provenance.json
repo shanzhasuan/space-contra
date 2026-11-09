@@ -1,21 +1,21 @@
 {
   "schemaVersion": "spatialcraft.editor-pack-provenance/v1",
   "managed": false,
-  "generatedAt": "2026-11-07T05:35:19.429Z",
+  "generatedAt": "2026-11-09T16:01:22.072095+08:00",
   "bundle": {
     "path": "C:\\Users\\Admin\\Documents\\Trae-CN\\Projects\\SpatialCommando_20261107_01\\app\\src\\main\\assets\\CommandoJungle.bundle",
     "digest": {
       "algorithm": "sha256",
-      "value": "38c85ed5a9db7d4ccf17fd923002f4f0a49bf5a9fd90c895a6ab56b858e5239b"
+      "value": "772f2cb31f8cc07667767d9be957c1bf7a9438701fddbc97fe1e4c74f3ea145a"
     },
     "scenesPath": "C:\\Users\\Admin\\Documents\\Trae-CN\\Projects\\SpatialCommando_20261107_01\\app\\src\\main\\assets\\CommandoJungle.scenes.json",
     "scenesDigest": {
       "algorithm": "sha256",
-      "value": "f6d47ff9cafa4e5343aee267ae2735f379932ddd89f7336e72480a331de832ea"
+      "value": "bde77cf7126c6b3a1c5dfea2e4e1b69eaf859b3600d4f02a1d72b5981da0e6d3"
     },
-    "entryScene": "Sources/Scenes/Hi.usda",
-    "runtimeSceneKey": "Scenes/Hi",
-    "sceneCount": 2
+    "entryScene": "Sources/Scenes/JungleFront.usda",
+    "runtimeSceneKey": "JungleFront",
+    "sceneCount": 1
   },
   "packageGate": {
     "status": "pass",
@@ -27,5 +27,11 @@
       "code": "UNMANAGED_EDITOR_PACKAGE",
       "message": "This bundle was packaged outside a managed Spatial Editor Workflow Run and has no accepted revision or gate proof."
     }
-  ]
+  ],
+  "migrationEvidence": {
+    "editorVersion": "6.1.9",
+    "sdkBom": "6.1.9",
+    "bundleSha256": "772f2cb31f8cc07667767d9be957c1bf7a9438701fddbc97fe1e4c74f3ea145a",
+    "sceneContent": "original authored scene re-exported; no new geometry"
+  }
 }

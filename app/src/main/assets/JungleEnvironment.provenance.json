@@ -1,17 +1,17 @@
 {
   "schemaVersion": "spatialcraft.editor-pack-provenance/v1",
   "managed": false,
-  "generatedAt": "2026-11-07T06:53:48.167Z",
+  "generatedAt": "2026-11-09T16:01:22.108005+08:00",
   "bundle": {
     "path": "C:\\Users\\Admin\\Documents\\Trae-CN\\Projects\\SpatialCommando_20261107_01\\app\\src\\main\\assets\\JungleEnvironment.bundle",
     "digest": {
       "algorithm": "sha256",
-      "value": "5959dce30e20107d9349a1a576476348d725a3e3ac3e945dcbce5d2ba41359bc"
+      "value": "fbea1f4b5c88c35e611ebbaf4572d0894ee8dfe2b7700b93fc3b21dc449ba6f5"
     },
     "scenesPath": "C:\\Users\\Admin\\Documents\\Trae-CN\\Projects\\SpatialCommando_20261107_01\\app\\src\\main\\assets\\JungleEnvironment.scenes.json",
     "scenesDigest": {
       "algorithm": "sha256",
-      "value": "af44dd2a96c6a0dfac57520c538b97d5f4826ff313ba406deea6b55c9cde85e8"
+      "value": "f51098985134f00d5796701f5b9ca2bdc5b71d638a63508faf71ed8e6360631a"
     },
     "entryScene": "Sources/Scenes/Hi.usda",
     "runtimeSceneKey": "Scenes/Hi",
@@ -27,5 +27,11 @@
       "code": "UNMANAGED_EDITOR_PACKAGE",
       "message": "This bundle was packaged outside a managed Spatial Editor Workflow Run and has no accepted revision or gate proof."
     }
-  ]
+  ],
+  "migrationEvidence": {
+    "editorVersion": "6.1.9",
+    "sdkBom": "6.1.9",
+    "bundleSha256": "fbea1f4b5c88c35e611ebbaf4572d0894ee8dfe2b7700b93fc3b21dc449ba6f5",
+    "sceneContent": "original authored scene re-exported; no new geometry"
+  }
 }

@@ -58,11 +58,12 @@ fun IronFrontScene() {
                 scaleVector = Vector3(displayScale, displayScale, displayScale)
             }
             content.addEntity(owner)
-            bindBattlefieldAccessibility(content,owner);bindPanelAccessibility(content,attachments,owner,width,height,depth)
+            bindGamePanels(attachments,owner,width,height,depth)
             try {
+                GameRuntime.sceneLoadFailure = null
                 val environment = JungleEnvironment.load(context)
                 environmentRef[0] = environment
-                bindEnvironmentAccessibility(content, environment.root)
+                attachGameEnvironment(content, environment.root)
                 val scene = loadEditorGameScene(context)
                 val models = loadGeneratedModels(context)
                 val renderer = GameModelRenderer(owner, scene.loaded, scene.scope, width, height, depth, models, environment::applyTheme)
@@ -73,6 +74,7 @@ fun IronFrontScene() {
                 renderer.update(GameRuntime.engine)
                 Log.i("IronFront", "Headset display width=3.2m center=(0,1.45,-2.2) scale=$displayScale")
             } catch (e: Exception) {
+                GameRuntime.sceneLoadFailure = e.stackTraceToString()
                 Log.e("IronFront", "Editor scene integration failed", e)
                 GameRuntime.sceneReady = false
                 GameRuntime.loadingText = "场景加载失败，请重新打开游戏"

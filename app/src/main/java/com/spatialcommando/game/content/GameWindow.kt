@@ -13,6 +13,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -49,7 +50,10 @@ private fun MenuCardContent(modifier: Modifier, padding: Dp = 24.dp, spacing: Dp
 fun GameHud() {
     val hud=GameRuntime.hud
     // design-style: design-surface hud-panel
-    Column(Modifier.size(232.dp,168.dp).testTag("player-status-hud").clip(RoundedCornerShape(20.dp))
+    Column(Modifier.size(232.dp,168.dp).testTag("player-status-hud").semantics(mergeDescendants=true) {
+        contentDescription="玩家状态"
+        stateDescription="生命 ${hud.lives}/${hud.maxLives}，得分 ${hud.score}，${hud.levelNumber}/10 ${hud.levelTitle}"
+    }.clip(RoundedCornerShape(20.dp))
         .background(SkyCardColor).padding(12.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
         Text("玩家状态",style=PicoTheme.typography.titleMedium)
         Text("生命 ${hud.lives.coerceAtLeast(0)}/${hud.maxLives}  ${"♥ ".repeat(hud.lives.coerceAtLeast(0))}",style=PicoTheme.typography.bodyMedium)
@@ -63,7 +67,10 @@ fun GameHud() {
 fun EnemyHud() {
     val hud=GameRuntime.hud
     // design-style: design-surface enemy-hud-panel
-    Column(Modifier.size(232.dp,168.dp).testTag("enemy-status-hud").clip(RoundedCornerShape(20.dp))
+    Column(Modifier.size(232.dp,168.dp).testTag("enemy-status-hud").semantics(mergeDescendants=true) {
+        contentDescription="敌人状态"
+        stateDescription=if(hud.targetMaxHealth>0)"${hud.targetName}，血量 ${hud.targetHealth}/${hud.targetMaxHealth}" else "附近暂无目标"
+    }.clip(RoundedCornerShape(20.dp))
         .background(SkyCardColor).padding(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
         Text("敌人状态",style=PicoTheme.typography.titleMedium)
         if(hud.targetMaxHealth>0) {

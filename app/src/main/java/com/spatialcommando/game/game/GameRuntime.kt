@@ -7,7 +7,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.pico.spatial.core.ecs.Entity
-import com.pico.spatial.core.ecs.AccessibilityComponent
 import com.pico.spatial.core.ecs.SceneUpdateContext
 import java.util.concurrent.atomic.AtomicReference
 import java.util.concurrent.atomic.AtomicInteger
@@ -49,6 +48,7 @@ object GameRuntime {
     val engine = GameEngine()
     var hud by mutableStateOf(engine.hud()); private set
     var sceneReady by mutableStateOf(false)
+    var sceneLoadFailure: String? = null
     var loadingText by mutableStateOf("正在加载闯关场景…")
     var controlsReady by mutableStateOf(false)
     var controlText by mutableStateOf("请连接 PICO 左右手柄")
@@ -71,11 +71,7 @@ object GameRuntime {
     }
     fun publish() {
         hud = engine.hud()
-        renderer?.root?.components?.get(AccessibilityComponent::class.java)?.value = "${hud.levelNumber}/${hud.totalLevels} ${hud.levelTitle} / ${hud.mode}"
 
-        panelEntities["hud"]?.components?.get(AccessibilityComponent::class.java)?.value="生命 ${hud.lives}/${hud.maxLives} / 得分 ${hud.score} / ${hud.levelNumber}/10 ${hud.levelTitle}"
-        panelEntities["enemyHud"]?.components?.get(AccessibilityComponent::class.java)?.value=if(hud.targetMaxHealth>0)"${hud.targetName} / 血量 ${hud.targetHealth}/${hud.targetMaxHealth}" else "附近暂无目标"
-        panelEntities["result"]?.components?.get(AccessibilityComponent::class.java)?.value=if(hud.mode==GameMode.LOST)"重新挑战本关" else "关卡结果"
         engine.completedMissionCheckpoint()?.let { saveCheckpoint(it) }
     }
     private fun saveCheckpoint(checkpoint: CampaignCheckpoint) {

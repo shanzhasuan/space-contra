@@ -14,12 +14,11 @@ import com.pico.spatial.core.ecs.ModelComponent
 import com.pico.spatial.core.ecs.ModelEntity
 import com.pico.spatial.core.ecs.StageEnvironmentLightingComponent
 import com.pico.spatial.core.ecs.ImageBasedLightSource
-import com.pico.spatial.core.ecs.resource.ImageBasedLightingGenerationOption
+import com.pico.spatial.core.ecs.resource.TextureEncoding
 import com.pico.spatial.core.ecs.resource.MaterialCullingMode
 import com.pico.spatial.core.ecs.resource.MeshResource
 import com.pico.spatial.core.ecs.resource.SphereOption
 import com.pico.spatial.core.ecs.resource.PrimitiveSphereTopology
-import com.pico.spatial.core.ecs.resource.MaterialTextureParameter
 import com.pico.spatial.core.ecs.resource.TextureCreateOption
 import com.pico.spatial.core.ecs.resource.TextureResource
 import com.pico.spatial.core.ecs.resource.UnlitMaterial
@@ -83,11 +82,11 @@ class JungleEnvironment private constructor(
                     val bitmap = context.assets.open("Environment/jungle_panorama.jpg").use {
                         requireNotNull(BitmapFactory.decodeStream(it, null, options)) { "Panorama bitmap decode failed" }
                     }
-                    try { TextureResource(bitmap, TextureCreateOption()) } finally { bitmap.recycle() }
+                    try { TextureResource.create(bitmap) } finally { bitmap.recycle() }
                 }
                 lighting = withContext(Dispatchers.IO) {
-                    TextureResource.load("Environment/jungle_lighting.jpg", option = ImageBasedLightingGenerationOption().apply {
-                        desiredCubemapFaceSize = 128L
+                    TextureResource.load("Environment/jungle_lighting.ktx", option = TextureCreateOption().apply {
+                        textureEncoding = TextureEncoding.LINEAR
                     })
                 }
                 require(panorama.valid && lighting.valid) { "Panorama or lighting texture is invalid" }
@@ -95,12 +94,12 @@ class JungleEnvironment private constructor(
                 for(theme in listOf("bridge","bunker","waterfall","snow","energy","hangar","furnace","laboratory","alien")) {
                     val color = withContext(Dispatchers.IO) {
                         val bitmap = context.assets.open("Environment/$theme.jpg").use { requireNotNull(BitmapFactory.decodeStream(it,null,BitmapFactory.Options().apply {inSampleSize=2;inPreferredConfig=Bitmap.Config.ARGB_8888})) }
-                        try { TextureResource(bitmap, TextureCreateOption()) } finally { bitmap.recycle() }
+                        try { TextureResource.create(bitmap) } finally { bitmap.recycle() }
                     }
                     color.toGlobal()
                     try {
                         val ibl = withContext(Dispatchers.IO) {
-                            TextureResource.load("Environment/${theme}_lighting.jpg", option=ImageBasedLightingGenerationOption().apply { desiredCubemapFaceSize=64L })
+                            TextureResource.load("Environment/${theme}_lighting.ktx", option=TextureCreateOption().apply { textureEncoding = TextureEncoding.LINEAR })
                         }
                         ibl.toGlobal(); variants[theme] = color to ibl
                     } catch(e: Exception) { color.close(); throw e }
@@ -120,7 +119,7 @@ class JungleEnvironment private constructor(
                 material = skyMaterial
                 // The packed analytic Sphere remains as an Editor authoring reference.
                 // Its runtime replacement has explicit panorama UVs and normal SDK depth behavior.
-                scene.scope.getChildren().forEach { it.enabled = false }
+                EntityTreeVisibility(scene.scope).setVisible(false)
                 scene.loaded.setName("JunglePanoramaEnvironment")
                 scene.loaded.enabled = true
                 val sky = ModelEntity(mesh, skyMaterial)

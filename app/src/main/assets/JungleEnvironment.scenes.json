@@ -1,6 +1,5 @@
 {
   "activeScenePath": "Sources/Scenes/Hi.usda",
-  "detail": "full",
   "scenes": [
     {
       "bundlePath": "Sources/Scenes/Hi.usda",
@@ -28,7 +27,6 @@
           "name": "JungleSkySphere",
           "parentPath": "Root",
           "path": "Root/JungleSkySphere",
-          "protocolEntityId": "entity_117008356685643806",
           "resources": {},
           "transform": {
             "position": [
@@ -58,7 +56,6 @@
           "name": "DefaultMaterial",
           "parentPath": "Root/JungleSkySphere",
           "path": "Root/JungleSkySphere/DefaultMaterial",
-          "protocolEntityId": "entity_117008356685643807",
           "resources": {},
           "transform": {
             "position": [
@@ -93,7 +90,6 @@
               "entityId": "scene:hi:Root/JungleSkySphere/DefaultMaterial",
               "name": "DefaultMaterial",
               "path": "Root/JungleSkySphere/DefaultMaterial",
-              "protocolEntityId": "entity_117008356685643807",
               "transform": {
                 "position": [
                   0,
@@ -118,7 +114,6 @@
           "entityId": "scene:hi:Root/JungleSkySphere",
           "name": "JungleSkySphere",
           "path": "Root/JungleSkySphere",
-          "protocolEntityId": "entity_117008356685643806",
           "transform": {
             "position": [
               0,

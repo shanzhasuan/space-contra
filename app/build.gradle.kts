@@ -35,7 +35,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    androidResources { noCompress += listOf("bundle", "glb") }
+    androidResources { noCompress += listOf("bundle", "glb", "ktx") }
     buildFeatures {
         compose = true
     }

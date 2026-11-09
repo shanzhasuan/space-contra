@@ -6,6 +6,8 @@ import com.pico.spatial.core.ecs.animation.AnimationPlayConfig
 import com.pico.spatial.core.ecs.animation.AnimationPlaybackController
 import com.pico.spatial.core.ecs.resource.AnimationResource
 
+data class ActorPlaybackState(val clip: String, val time: Float, val playing: Boolean)
+
 /** Owns playback independently of model instancing; no animation controller is copied. */
 class SkeletalActor private constructor(private val target: Entity, private val clips: Map<String,AnimationResource>) {
     private val loops=linkedMapOf<String,AnimationResource>()
@@ -25,6 +27,7 @@ class SkeletalActor private constructor(private val target: Entity, private val 
         controller=target.playAnimation(resource,AnimationPlayConfig(transitionDuration=0.06f)).also { it.setSpeed(speed) }
         current=desired
     }
+    fun playbackState(): ActorPlaybackState? = controller?.takeIf { it.valid }?.let { ActorPlaybackState(current,it.getTime(),it.isPlaying()) }
     fun close() {
         controller?.let { if(it.valid)it.stop();it.close() };controller=null
         loops.values.forEach { it.close() };loops.clear()

@@ -22,9 +22,9 @@ suspend fun loadEditorGameScene(context: Context, configAsset: String = "Command
     val bundle = withContext(Dispatchers.IO) { AssetBundle.load("asset://${config.getString("bundle")}") }
     val loaded = try { bundle.loadModelSuspend(sceneKey) } finally { bundle.close() }
     try {
-        // SDK6.2.8 returns an outer Entity and a unique direct child for the manifest scope.
+        // SDK versions may return the manifest scope itself or an outer Entity.
         // Its runtime name is deliberately not inferred from the manifest's Root notation.
-        val candidates = loaded.getChildren().filter { child ->
+        val candidates = (listOf(loaded) + loaded.getChildren()).filter { child ->
             child.getChildren().map { it.getName() }.sorted() == expected
         }
         require(candidates.size == 1) {
