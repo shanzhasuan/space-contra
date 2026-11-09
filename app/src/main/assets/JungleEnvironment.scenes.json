@@ -1,0 +1,157 @@
+{
+  "activeScenePath": "Sources/Scenes/Hi.usda",
+  "detail": "full",
+  "scenes": [
+    {
+      "bundlePath": "Sources/Scenes/Hi.usda",
+      "container": {
+        "appContainer": "Stage",
+        "bounded": false,
+        "contentHost": null,
+        "coordinateSystem": "right-handed, meters",
+        "editorType": "Stage",
+        "isDefault": false,
+        "showUISample": false,
+        "sizeDp": null,
+        "sizeMeters": null,
+        "source": "editor-viewport-container-settings",
+        "spaceRequirement": "FullSpace",
+        "unit": "DevicePoint",
+        "usageHint": "Use Stage for immersive unbounded 3D content."
+      },
+      "entities": [
+        {
+          "active": true,
+          "bounds": null,
+          "components": [],
+          "entityId": "scene:hi:Root/JungleSkySphere",
+          "name": "JungleSkySphere",
+          "parentPath": "Root",
+          "path": "Root/JungleSkySphere",
+          "protocolEntityId": "entity_117008356685643806",
+          "resources": {},
+          "transform": {
+            "position": [
+              0,
+              1.4500000476837158,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              400,
+              400,
+              400
+            ]
+          },
+          "type": "Entity"
+        },
+        {
+          "active": true,
+          "bounds": null,
+          "components": [],
+          "entityId": "scene:hi:Root/JungleSkySphere/DefaultMaterial",
+          "name": "DefaultMaterial",
+          "parentPath": "Root/JungleSkySphere",
+          "path": "Root/JungleSkySphere/DefaultMaterial",
+          "protocolEntityId": "entity_117008356685643807",
+          "resources": {},
+          "transform": {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "type": "Entity"
+        }
+      ],
+      "entityCount": 2,
+      "guid": "1df1da0a-5309-42f0-ac7c-113a6aee09cb",
+      "hierarchy": [
+        {
+          "active": true,
+          "children": [
+            {
+              "active": true,
+              "children": [],
+              "entityId": "scene:hi:Root/JungleSkySphere/DefaultMaterial",
+              "name": "DefaultMaterial",
+              "path": "Root/JungleSkySphere/DefaultMaterial",
+              "protocolEntityId": "entity_117008356685643807",
+              "transform": {
+                "position": [
+                  0,
+                  0,
+                  0
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "type": "Entity"
+            }
+          ],
+          "entityId": "scene:hi:Root/JungleSkySphere",
+          "name": "JungleSkySphere",
+          "path": "Root/JungleSkySphere",
+          "protocolEntityId": "entity_117008356685643806",
+          "transform": {
+            "position": [
+              0,
+              1.4500000476837158,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              400,
+              400,
+              400
+            ]
+          },
+          "type": "Entity"
+        }
+      ],
+      "id": "scene:hi",
+      "name": "Hi",
+      "rootCount": 1,
+      "sourcePath": "Sources/Scenes/Hi.usda",
+      "warnings": [],
+      "runtimeSceneKey": "Scenes/Hi"
+    }
+  ],
+  "schemaVersion": "0.1",
+  "scope": "bundle_scenes",
+  "source": "pack_editor_bundle",
+  "sourceTool": "export_bundle_scene_manifest",
+  "warnings": [],
+  "runtimeSceneRoot": "Sources"
+}

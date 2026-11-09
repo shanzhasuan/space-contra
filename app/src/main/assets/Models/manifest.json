@@ -1,0 +1,47 @@
+{
+  "Player": {
+    "asset": "Models/commando-prone.glb",
+    "yawDegrees": 0,
+    "basePivot": true
+  },
+  "Enemy": {
+    "asset": "Models/soldier-animated.glb",
+    "yawDegrees": 0,
+    "basePivot": true
+  },
+  "Turret": {
+    "asset": "Models/turret.glb",
+    "yawDegrees": 90,
+    "basePivot": true
+  },
+  "Guardian": {
+    "asset": "Models/guardian.glb",
+    "yawDegrees": 0,
+    "basePivot": true
+  },
+  "PlayerLive": {
+    "asset": "Models/commando-prone.glb",
+    "yawDegrees": 0,
+    "basePivot": true
+  },
+  "Background": {
+    "asset": "Models/forest.glb",
+    "yawDegrees": 0,
+    "basePivot": true
+  },
+  "Supply": {
+    "asset": "Models/supply.glb",
+    "yawDegrees": 20,
+    "basePivot": true
+  },
+  "Mountains": {
+    "asset": "Models/ruins.glb",
+    "yawDegrees": 0,
+    "basePivot": true
+  },
+  "Industrial": {
+    "asset": "Models/industrial.glb",
+    "yawDegrees": 0,
+    "basePivot": true
+  }
+}

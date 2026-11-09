@@ -1,0 +1,94 @@
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log/OS Files
+*.log
+.DS_Store
+
+# Android Studio generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+output.json
+
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Android Profiling
+*.hprof
+.vibelab/
+
+# >>> pico-cli managed: do not edit >>>
+/.agents/skills/pico-spatial-app-designer/
+/.agents/skills/pico-workflow-integrator/
+/.agents/skills/porting-android-app/
+/.agents/skills/spatial-accessibility/
+/.agents/skills/spatial-app-dev-workflow/
+/.agents/skills/spatial-app-onboarding/
+/.agents/skills/spatial-app-performance-analysis-ext/
+/.agents/skills/spatial-app-performance-analysis/
+/.agents/skills/spatial-app-performance-workflow/
+/.agents/skills/spatial-bundle-scene-reader/
+/.agents/skills/spatial-design-to-app/
+/.agents/skills/spatial-editor/
+/.agents/skills/spatial-sdk-guideline/
+/.agents/skills/spatial-sdk-scene-builder/
+/.agents/skills/spatial-sdk-update/
+/.agents/skills/spatial-ui-ability/
+/.agents/skills/spatial-ui-design-style/
+/.agents/skills/spatialml-debugging/
+/.agents/skills/spatialml/
+/.agents/skills/threejs-to-spatial/
+/.trae/skills/pico-spatial-app-designer/
+/.trae/skills/pico-workflow-integrator/
+/.trae/skills/porting-android-app/
+/.trae/skills/spatial-accessibility/
+/.trae/skills/spatial-app-dev-workflow/
+/.trae/skills/spatial-app-onboarding/
+/.trae/skills/spatial-app-performance-analysis-ext/
+/.trae/skills/spatial-app-performance-analysis/
+/.trae/skills/spatial-app-performance-workflow/
+/.trae/skills/spatial-bundle-scene-reader/
+/.trae/skills/spatial-design-to-app/
+/.trae/skills/spatial-editor/
+/.trae/skills/spatial-sdk-guideline/
+/.trae/skills/spatial-sdk-scene-builder/
+/.trae/skills/spatial-sdk-update/
+/.trae/skills/spatial-ui-ability/
+/.trae/skills/spatial-ui-design-style/
+/.trae/skills/spatialml-debugging/
+/.trae/skills/spatialml/
+/.trae/skills/threejs-to-spatial/
+/PICO-SPATIAL-AGENTIC-TOOLS.AGENTS.md
+/.pico-env.json
+/.pico/
+/.pico-setup-resources.*.tmp/
+# <<< pico-cli managed <<<
+
+# Local development and publishing inputs
+/assets/
+/.scratch/
+/.agents/
+/.trae/
+/editor-assets/
+/docs/
+/logs/
+/draft_*/
+/dist/
+/AGENTS.md

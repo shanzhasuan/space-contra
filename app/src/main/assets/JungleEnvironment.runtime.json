@@ -1,0 +1,9 @@
+{
+  "bundle": "JungleEnvironment.bundle",
+  "runtimeSceneKey": "Scenes/Hi",
+  "scopePath": "Root",
+  "rootCount": 1,
+  "rootNames": [
+    "JungleSkySphere"
+  ]
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name=".platform.SpatialApplication"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_spatial_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_spatial_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SpatialCommandoTheme"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".platform.LaunchActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SpatialCommandoTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Full Stage provides the jungle sky and a battlefield at a fixed viewing distance. -->
+            <meta-data android:name="pico.spatial.stage.id" android:value="IronFrontControllerStage" />
+            <meta-data android:name="pico.spatial.stage.style" android:value="3" />
+            <meta-data android:name="pico.spatial.stage.upperlimb" android:value="1" />
+
+        </activity>
+
+        <meta-data android:name="controller" android:value="1" />
+    </application>
+
+</manifest>

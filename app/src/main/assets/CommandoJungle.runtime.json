@@ -1,0 +1,19 @@
+{
+  "bundle": "CommandoJungle.bundle",
+  "sourcePath": "Sources/Scenes/JungleFront.usda",
+  "runtimeSceneKey": "Scenes/JungleFront",
+  "scopePath": "Root",
+  "rootCount": 10,
+  "rootNames": [
+    "Player",
+    "Enemy",
+    "Turret",
+    "Guardian",
+    "Supply",
+    "Projectiles",
+    "Background",
+    "Terrain",
+    "Mountains",
+    "Backdrop"
+  ]
+}

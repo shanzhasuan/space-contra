@@ -1,0 +1,39 @@
+app:
+  id: "7705031327527010339"
+  name: 空间魂斗罗
+  slogan: 用 PICO 手柄挑战十关立体横版战场
+  description: |-
+    空间魂斗罗是一款面向 PICO 头显的立体横版闯关射击游戏。三维角色、森林与机甲构成可环绕观察的战场，十个关卡由丛林、断桥推进到能源基地、熔炉和异形据点，难度逐步增加。
+
+    左摇杆负责移动、瞄准和蹲伏，A 跳跃，B 或扳机射击，X 切换已拾取武器，右摇杆下推趴下、松开站起。初始生命为五个，左右 HUD 实时显示玩家状态和当前敌人的剩余血量，操作指南支持展开与收起。
+
+    使用 SGS 生成的三维素材、角色骨骼动作和原创 FC 风格射击音效。实际通关后保存下一关进度，失败可重新挑战。推荐使用 PICO 左右手柄体验。
+  tags:
+    - 动作射击
+  category: game
+  icon: assets/icon.jpg
+  landscape: assets/landscape.png
+  detail_images:
+    - assets/detail-1.png
+    - assets/detail-2.png
+    - assets/detail-3.png
+    - assets/detail-4.png
+    - assets/detail-5.png
+  videos: []
+version:
+  name: V1.0.0
+  notes: |-
+    首发版本：十关递增难度的立体横版闯关。
+    - 三维角色骨骼动作、跳跃、蹲伏和右摇杆趴下。
+    - 五个初始生命，真实通关存档与关卡重试。
+    - 对称状态 HUD、实时敌人血量及可收起操作指南。
+    - 十种关卡环境和原创 FC 风格射击、命中及通关音效。
+build:
+  repo_url: https://github.com/shanzhasuan/space-contra
+  repo_visibility: public
+  tech_stack: android_spatial
+  ai_tool: Trae CLI
+  ai_model: GPT-6
+  features:
+    - controller_support
+  teammates: []
